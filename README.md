@@ -35,6 +35,20 @@ Dataset: https://www.kaggle.com/datasets/sudalairajkumar/cryptocurrencypricehist
 
 ### RESULTS
 
+**ETHERIUM** 
+
+![](imgs/acf_pacf_eth.png)
+![](imgs/aic_eth.png)
+![](imgs/best_fit_eth.png)
+![](imgs/rmse_eth.png)
+
+**Dogecoin** 
+
+![](imgs/acf_pacf_doge.png)
+![](imgs/aic_doge.png)
+![](imgs/best_fit_doge.png)
+![](imgs/rmse_doge.png)
+
 There is a very clear upward trend in the data, several sharp changes, and the mean is in no way constant over time. All of these are red flags that the data is not
 stationary. From looking at the data that seasonality is an issue since there is no consistent change that occurs periodically. The issue of the trend can and will be 
 addressed via differencing. The sharp changes do make a difference in terms of the variance, which we will attempt to make constant via power transformations such as 
@@ -58,6 +72,8 @@ Zt : the approximate white noise and variance 0.003845 & 0.006976 respectively.
 ### CONCLUSION
 
 We then use our model to forecast for the next 12 months setting h as 12:
+
+![](imgs/Forecasts.png)
 
 We can observe that our model predicted a large confidence interval. We are unable to predict a small interval, but we can be certain that the futures values will be 
 within this interval. As we increase our forecast further the confidence intervals will become larger. Our data had heteroskedasticity so ARIMA might not have been a 
